@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjrjbqsdcx57j"]
 
-[ext_resource type="Script" uid="uid://t4qt63il7lks" path="res://character_body_2d.gd" id="1_0xm2m"]
-[ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://pixelate.gdshader" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://bgq57o67w8doo" path="res://icon.svg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://t4qt63il7lks" path="res://Scenes/Icon/character_body_2d.gd" id="1_0xm2m"]
+[ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://Scenes/Icon/pixelate.gdshader" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bgq57o67w8doo" path="res://Scenes/Icon/icon.svg" id="2_h2yge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1bvp3"]
 
@@ -20,5 +20,5 @@ shape = SubResource("CircleShape2D_1bvp3")
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
 material = SubResource("ShaderMaterial_lquwl")
-position = Vector2(569, 308)
+position = Vector2(0, -1)
 texture = ExtResource("2_h2yge")
