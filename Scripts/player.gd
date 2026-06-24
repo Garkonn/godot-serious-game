@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 300.0
+var speed = 420.0
 
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
