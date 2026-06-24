@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsik28fesldrd"]
+
+[ext_resource type="PackedScene" uid="uid://fuo06qo81n0a" path="res://Scenes/box.tscn" id="1_go701"]
+[ext_resource type="PackedScene" uid="uid://cjrjbqsdcx57j" path="res://Scenes/Icon/main.tscn" id="2_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://b4e3fu7loph8m" path="res://Scenes/player.tscn" id="3_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://banwuhp68hktw" path="res://Scenes/disc.tscn" id="4_8j60k"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_yp4wr"]
+
+[node name="World" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.12, 0.0912, 0.11856, 1)
+position = Vector2(576.125, 323.875)
+scale = Vector2(5369.75, 3786.25)
+mesh = SubResource("QuadMesh_yp4wr")
+
+[node name="Box4" parent="." instance=ExtResource("1_go701")]
+position = Vector2(93, 1352)
+
+[node name="Disc" parent="." instance=ExtResource("4_8j60k")]
+position = Vector2(600, 600)
+
+[node name="Node2D" parent="." instance=ExtResource("2_5a7ea")]
+position = Vector2(93, -132)
+
+[node name="Player" parent="." instance=ExtResource("3_5a7ea")]
+position = Vector2(477, 604)
