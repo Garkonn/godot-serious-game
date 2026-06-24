@@ -11,9 +11,10 @@
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.12, 0.0912, 0.11856, 1)
-position = Vector2(576.125, 323.875)
+position = Vector2(620, 905)
 scale = Vector2(5369.75, 3786.25)
 mesh = SubResource("QuadMesh_yp4wr")
+metadata/_edit_lock_ = true
 
 [node name="Box4" parent="." instance=ExtResource("1_go701")]
 position = Vector2(93, 1352)
@@ -22,7 +23,7 @@ position = Vector2(93, 1352)
 position = Vector2(600, 600)
 
 [node name="Node2D" parent="." instance=ExtResource("2_5a7ea")]
-position = Vector2(93, -132)
+position = Vector2(63, -132)
 
 [node name="Player" parent="." instance=ExtResource("3_5a7ea")]
 position = Vector2(477, 604)
