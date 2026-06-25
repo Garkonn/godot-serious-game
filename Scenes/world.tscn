@@ -19,10 +19,11 @@ mesh = SubResource("QuadMesh_yp4wr")
 position = Vector2(93, 1352)
 
 [node name="Disc" parent="." instance=ExtResource("4_8j60k")]
-position = Vector2(600, 600)
+position = Vector2(640, 640)
 
 [node name="Node2D" parent="." instance=ExtResource("2_5a7ea")]
 position = Vector2(93, -132)
 
 [node name="Player" parent="." instance=ExtResource("3_5a7ea")]
 position = Vector2(477, 604)
+scale = Vector2(2, 2)

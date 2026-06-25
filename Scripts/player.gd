@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 var speed = 420.0
+var bullet_speed = 2000
+var bullet = preload("res://Scenes/Bullet.tscn")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var move_dir = Vector2(Input.get_axis("move_left", "move_right"),
 	Input.get_axis("move_up", "move_down"))
 
@@ -16,3 +18,15 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	move_and_slide()
+
+	if Input.is_action_just_pressed("shoot"):
+		fire()
+
+func fire():
+	var bullet_instance = bullet.instantiate()
+	bullet_instance.position = get_global_position()
+	bullet_instance.rotation_degrees = rotation_degrees
+	bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated(rotation))
+	get_tree().get_root().call_deferred("add_child",bullet_instance)
+	
+	
