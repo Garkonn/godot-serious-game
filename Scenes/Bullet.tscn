@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdor8yfaq42l1"]
+[gd_scene load_steps=5 format=3 uid="uid://dcswcd2mg7qtf"]
 
 [ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://Scenes/Icon/pixelate.gdshader" id="1_14k46"]
 [ext_resource type="Texture2D" uid="uid://ca7bk67gg0axp" path="res://Assets/topdown_textures/Orb.webp" id="1_vlxeq"]

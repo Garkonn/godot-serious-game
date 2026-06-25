@@ -24,6 +24,6 @@ position = Vector2(640, 640)
 [node name="Node2D" parent="." instance=ExtResource("2_5a7ea")]
 position = Vector2(93, -132)
 
-[node name="Player" parent="." instance=ExtResource("3_5a7ea")]
-position = Vector2(477, 604)
-scale = Vector2(2, 2)
+[node name="Player" parent="." node_paths=PackedStringArray("disc") instance=ExtResource("3_5a7ea")]
+position = Vector2(571, 562)
+disc = NodePath("../Disc")
