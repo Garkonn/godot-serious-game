@@ -8,8 +8,8 @@
 shader = ExtResource("2_rbleu")
 shader_parameter/amount = 16
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tqy2"]
-size = Vector2(124, 124)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbleu"]
+radius = 62.405
 
 [node name="Disc" type="Node2D"]
 scale = Vector2(7.79202, 7.79202)
@@ -22,7 +22,7 @@ texture = ExtResource("1_ugghr")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_2tqy2")
+shape = SubResource("CircleShape2D_rbleu")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
