@@ -13,6 +13,7 @@ height = 42.0
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6t5aa")
+disc_radius = 400.0
 
 [node name="Body" type="Sprite2D" parent="."]
 scale = Vector2(1.6875, 1.6875)
