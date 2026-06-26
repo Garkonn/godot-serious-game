@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsik28fesldrd"]
+[gd_scene load_steps=7 format=3 uid="uid://dsik28fesldrd"]
 
 [ext_resource type="PackedScene" uid="uid://fuo06qo81n0a" path="res://Scenes/box.tscn" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://cjrjbqsdcx57j" path="res://Scenes/Icon/main.tscn" id="2_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://b4e3fu7loph8m" path="res://Scenes/player.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://banwuhp68hktw" path="res://Scenes/disc.tscn" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://djpiuwdb4qwvk" path="res://Scenes/music_controller.tscn" id="5_fo5ed"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_yp4wr"]
 
@@ -18,8 +19,9 @@ mesh = SubResource("QuadMesh_yp4wr")
 [node name="Box4" parent="." instance=ExtResource("1_go701")]
 position = Vector2(93, 1352)
 
-[node name="Disc" parent="." instance=ExtResource("4_8j60k")]
+[node name="Disc" parent="." node_paths=PackedStringArray("music_controller") instance=ExtResource("4_8j60k")]
 position = Vector2(640, 640)
+music_controller = NodePath("../MusicController")
 
 [node name="Node2D" parent="." instance=ExtResource("2_5a7ea")]
 position = Vector2(93, -132)
@@ -27,3 +29,6 @@ position = Vector2(93, -132)
 [node name="Player" parent="." node_paths=PackedStringArray("disc") instance=ExtResource("3_5a7ea")]
 position = Vector2(571, 562)
 disc = NodePath("../Disc")
+disc_radius = 550.0
+
+[node name="MusicController" parent="." instance=ExtResource("5_fo5ed")]
