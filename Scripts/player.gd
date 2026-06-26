@@ -7,6 +7,9 @@ var bullet = preload("res://Scenes/Bullet.tscn")
 
 var last_disc_rotation: float = 0.0
 
+func _ready() -> void:
+	MusicController.bgm_play()
+
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 

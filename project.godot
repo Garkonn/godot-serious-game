@@ -15,6 +15,10 @@ run/main_scene="uid://dsik28fesldrd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Scenes/Icon/icon.svg"
 
+[autoload]
+
+MusicController="*res://Scenes/music_controller.tscn"
+
 [display]
 
 window/size/viewport_width=1280

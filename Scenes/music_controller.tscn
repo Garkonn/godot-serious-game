@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://er3nh60enxkv"]
+
+[ext_resource type="AudioStream" uid="uid://cs1qx85sl7wjp" path="res://Assets/Audio/Music/Space Disk - 115 BPM.wav" id="1_g5yuc"]
+[ext_resource type="Script" uid="uid://bi1evvefbb5n3" path="res://Scripts/music_controller.gd" id="1_vg377"]
+
+[node name="MusicController" type="Node2D"]
+script = ExtResource("1_vg377")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_g5yuc")

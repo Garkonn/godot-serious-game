@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drix2ecyohle1"
+path="res://.godot/imported/Space Disk - 100 BPM.wav-50b7266e71a9c39b7ccfadbec4e66d92.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Space Disk - 100 BPM.wav"
+dest_files=["res://.godot/imported/Space Disk - 100 BPM.wav-50b7266e71a9c39b7ccfadbec4e66d92.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
