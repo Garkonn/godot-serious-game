@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsmpht7ygckig"]
+[gd_scene load_steps=10 format=3 uid="uid://bp2xlrfccvyg1"]
 
-[ext_resource type="Script" uid="uid://dwhycks4bcsk3" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://Scenes/Icon/pixelate.gdshader" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://ccyw8mhr24cul" path="res://Assets/topdown_textures/Space Image.jpg" id="2_1ehe0"]
 
