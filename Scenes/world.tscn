@@ -1,11 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsik28fesldrd"]
+[gd_scene load_steps=14 format=3 uid="uid://dsik28fesldrd"]
 
 [ext_resource type="PackedScene" uid="uid://fuo06qo81n0a" path="res://Scenes/box.tscn" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://cjrjbqsdcx57j" path="res://Scenes/Icon/main.tscn" id="2_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://b4e3fu7loph8m" path="res://Scenes/player.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://banwuhp68hktw" path="res://Scenes/disc.tscn" id="4_8j60k"]
+[ext_resource type="Texture2D" uid="uid://csb20jxysvrcs" path="res://Assets/spacebg.png" id="5_fo5ed"]
+[ext_resource type="Shader" uid="uid://exuupop1w2b3" path="res://Scenes/background.gdshader" id="5_k7acu"]
+[ext_resource type="Script" uid="uid://du7wgpy76lcp7" path="res://Scenes/spacebg.gd" id="6_o06y3"]
+[ext_resource type="Texture2D" uid="uid://cihnjjasdr5dv" path="res://Assets/planets.png" id="7_k7acu"]
+[ext_resource type="Script" uid="uid://b7jyfqqs47cp5" path="res://Scenes/planetsmove.gd" id="8_5v1tr"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_yp4wr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5v1tr"]
+shader = ExtResource("5_k7acu")
+shader_parameter/scroll_speed = Vector2(0, 0.05)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0fj1v"]
+texture = ExtResource("7_k7acu")
+6:5/size_in_atlas = Vector2i(8, 8)
+6:5/0 = 0
+6:14/size_in_atlas = Vector2i(8, 8)
+6:14/0 = 0
+15:4/size_in_atlas = Vector2i(11, 9)
+15:4/0 = 0
+15:14/size_in_atlas = Vector2i(11, 9)
+15:14/0 = 0
+27:4/size_in_atlas = Vector2i(16, 10)
+27:4/0 = 0
+27:14/size_in_atlas = Vector2i(16, 10)
+27:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ikia7"]
+sources/0 = SubResource("TileSetAtlasSource_0fj1v")
 
 [node name="World" type="Node2D"]
 
@@ -26,3 +54,28 @@ position = Vector2(93, -132)
 
 [node name="Player" parent="." instance=ExtResource("3_5a7ea")]
 position = Vector2(477, 604)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5v1tr")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_fo5ed")
+stretch_mode = 1
+script = ExtResource("6_o06y3")
+
+[node name="Node2D2" type="Node2D" parent="."]
+script = ExtResource("8_5v1tr")
+
+[node name="planets1" type="TileMapLayer" parent="Node2D2"]
+tile_map_data = PackedByteArray(0, 0, 27, 0, 10, 0, 0, 0, 6, 0, 5, 0, 0, 0)
+tile_set = SubResource("TileSet_ikia7")
+
+[node name="planets2" type="TileMapLayer" parent="Node2D2"]
+tile_map_data = PackedByteArray(0, 0, 10, 0, 55, 0, 0, 0, 27, 0, 4, 0, 0, 0)
+tile_set = SubResource("TileSet_ikia7")
+
+[node name="planets3" type="TileMapLayer" parent="Node2D2"]
+tile_map_data = PackedByteArray(0, 0, 72, 0, 35, 0, 0, 0, 15, 0, 4, 0, 0, 0)
+tile_set = SubResource("TileSet_ikia7")
