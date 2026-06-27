@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp2xlrfccvyg1"]
+[gd_scene load_steps=10 format=3 uid="uid://74bydju5650n"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://Scenes/Icon/pixelate.gdshader" id="1_48xlc"]
