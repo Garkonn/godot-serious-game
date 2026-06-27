@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://4nhokwgmjb4"]
+
+[ext_resource type="Texture2D" uid="uid://b4ure1fagqc7c" path="res://Assets/characters/enemies.png" id="1_0bjqj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxo2p"]
+atlas = ExtResource("1_0bjqj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w30np"]
+atlas = ExtResource("1_0bjqj")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xpsf"]
+atlas = ExtResource("1_0bjqj")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4up7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxo2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w30np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xpsf")
+}],
+"loop": true,
+"name": &"green_walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uf0pv"]
+size = Vector2(51, 58)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4up7g")
+animation = &"green_walk"
+autoplay = "green_walk"
+frame_progress = 0.482808
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.5, 3)
+shape = SubResource("RectangleShape2D_uf0pv")
