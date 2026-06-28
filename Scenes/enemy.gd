@@ -5,7 +5,6 @@ var player: Node2D = null
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
-	$Area2D.body_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta: float) -> void:
 	if player:
@@ -16,10 +15,10 @@ func _physics_process(delta: float) -> void:
 func die() -> void:
 	queue_free()
 
-func _on_area_2d_body_entered(body: Node) -> void:
-	print("Enemy touched by: ", body.name)
-	if body.is_in_group("bullet"):
-		body.queue_free()
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("Enemy area hit by: ", area.get_parent().name)
+	if area.get_parent().is_in_group("bullet"):
+		area.get_parent().queue_free()
 		die()
-	elif body.is_in_group("player"):
-		body.die()
+	elif area.get_parent().is_in_group("player"):
+		area.get_parent().die()

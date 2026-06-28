@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4e3fu7loph8m"]
+[gd_scene load_steps=6 format=3 uid="uid://b4e3fu7loph8m"]
 
 [ext_resource type="Script" uid="uid://ddlv0a785t4kv" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://bu3rj83lj5q5j" path="res://Assets/characters/fixed_player.png" id="2_fkybt"]
-[ext_resource type="Script" path="res://Scripts/gunPivot.gd" id="3_x3wgy"]
-[ext_resource type="Script" path="res://Scripts/gun.gd" id="4_vgqql"]
+[ext_resource type="Script" uid="uid://4dgdbce6kr4k" path="res://Scripts/gunPivot.gd" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dberkbseu7838" path="res://Assets/characters/weapons.png" id="4_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3wgy"]
@@ -24,17 +23,17 @@ region_enabled = true
 region_rect = Rect2(21.7188, 10.7043, 20.2812, 52.4486)
 
 [node name="GunPivot" type="Node2D" parent="Body"]
-position = Vector2(13.037, 0)
 script = ExtResource("3_x3wgy")
 
 [node name="Gun" type="Sprite2D" parent="Body/GunPivot"]
+position = Vector2(24.5926, 0)
 rotation = -6.28319
 scale = Vector2(0.568937, 0.568937)
 texture = ExtResource("4_x3wgy")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(44.3106, 5.20722, 31.6894, 19.3972)
-script = ExtResource("4_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.779999, 0.76)
 shape = SubResource("CapsuleShape2D_x3wgy")

@@ -10,7 +10,6 @@ var bullet = preload("res://Scenes/Bullet.tscn")
 
 var last_disc_rotation: float = 0.0
 
-
 # NOT USING THIS PROCESS, CAN DELETE
 func _process(_delta: float) -> void:
 	pass
