@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dggcdsoua5d6f"
+path="res://.godot/imported/Space Disk - 85 BPM.wav-af01d9c69685a566e3fc4c35be7b031d.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Space Disk - 85 BPM.wav"
+dest_files=["res://.godot/imported/Space Disk - 85 BPM.wav-af01d9c69685a566e3fc4c35be7b031d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

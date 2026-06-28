@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://banwuhp68hktw"]
 
-[ext_resource type="Script" uid="uid://b3bnnk504levo" path="res://Scenes/disc.gd" id="1_2tqy2"]
+[ext_resource type="Script" uid="uid://b3bnnk504levo" path="res://Scripts/disc.gd" id="1_2tqy2"]
 [ext_resource type="Texture2D" uid="uid://bgq57o67w8doo" path="res://Scenes/Icon/icon.svg" id="1_ugghr"]
 [ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://Scenes/Icon/pixelate.gdshader" id="2_rbleu"]
 
@@ -12,7 +12,7 @@ shader_parameter/amount = 16
 size = Vector2(124, 124)
 
 [node name="Disc" type="Node2D"]
-scale = Vector2(5.08768, 5.08768)
+scale = Vector2(7.79202, 7.79202)
 script = ExtResource("1_2tqy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,6 +23,3 @@ texture = ExtResource("1_ugghr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_2tqy2")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
