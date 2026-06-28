@@ -22,7 +22,7 @@ region_enabled = true
 region_rect = Rect2(21.7188, 10.7043, 20.2812, 52.4486)
 
 [node name="GunPivot" type="Node2D" parent="Body"]
-position = Vector2(15.4074, 0)
+position = Vector2(13.037, 0)
 script = ExtResource("3_x3wgy")
 
 [node name="Gun" type="Sprite2D" parent="Body/GunPivot"]
