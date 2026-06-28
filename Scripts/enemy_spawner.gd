@@ -10,7 +10,7 @@ func _ready():
 		if i is Marker2D:
 			spawn_points.append(i)
 
-func _on_timer_timeout():
+
 #pick random spawn point
 	var spawn = spawn_points[randi() % spawn_points.size()]
 #spawn enemy

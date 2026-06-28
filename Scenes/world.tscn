@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cjrjbqsdcx57j" path="res://Scenes/Icon/main.tscn" id="2_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://b4e3fu7loph8m" path="res://Scenes/player.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://banwuhp68hktw" path="res://Scenes/disc.tscn" id="4_8j60k"]
-[ext_resource type="PackedScene" uid="uid://dtl380m0561hq" path="res://enemy_spawner.tscn" id="5_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://dn4a0tx6ck0va" path="res://Scenes/enemy_spawner.tscn" id="5_fo5ed"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_yp4wr"]
 
@@ -22,6 +22,7 @@ position = Vector2(93, 1352)
 
 [node name="Disc" parent="." instance=ExtResource("4_8j60k")]
 position = Vector2(600, 600)
+script = null
 
 [node name="Node2D" parent="." instance=ExtResource("2_5a7ea")]
 position = Vector2(63, -132)
@@ -30,6 +31,3 @@ position = Vector2(63, -132)
 position = Vector2(477, 604)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_fo5ed")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
