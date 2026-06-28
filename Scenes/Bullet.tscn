@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcswcd2mg7qtf"]
+[gd_scene load_steps=7 format=3 uid="uid://dcswcd2mg7qtf"]
 
 [ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://Scenes/Icon/pixelate.gdshader" id="1_14k46"]
 [ext_resource type="Texture2D" uid="uid://dberkbseu7838" path="res://Assets/characters/weapons.png" id="2_14k46"]
@@ -9,10 +9,14 @@
 shader = ExtResource("1_14k46")
 shader_parameter/amount = 16
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvus8"]
+radius = 29.8329
+
 [node name="Bullet" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 4
 gravity_scale = 0.0
+script = ExtResource("1_qvus8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.03405, 3.07975)

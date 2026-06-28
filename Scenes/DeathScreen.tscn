@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctj01haelxlks"]
+
+[ext_resource type="Script" uid="uid://ckam4n2pg2grv" path="res://Scripts/canvas_layer.gd" id="1_58ct5"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_58ct5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 206.0
+offset_bottom = 206.0
+color = Color(0.55, 0.11, 0.11, 0.564706)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

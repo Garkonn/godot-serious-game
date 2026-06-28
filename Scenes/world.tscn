@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsik28fesldrd"]
+[gd_scene load_steps=15 format=3 uid="uid://dsik28fesldrd"]
 
 [ext_resource type="PackedScene" uid="uid://b4e3fu7loph8m" path="res://Scenes/player.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://banwuhp68hktw" path="res://Scenes/disc.tscn" id="4_8j60k"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://du7wgpy76lcp7" path="res://Scenes/spacebg.gd" id="6_o06y3"]
 [ext_resource type="Texture2D" uid="uid://cihnjjasdr5dv" path="res://Assets/planets.png" id="7_k7acu"]
 [ext_resource type="Script" uid="uid://b7jyfqqs47cp5" path="res://Scenes/planetsmove.gd" id="8_5v1tr"]
+[ext_resource type="Script" uid="uid://dl3ybv1iqs3jw" path="res://Scenes/spawner.gd" id="9_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://djpiuwdb4qwvk" path="res://Scenes/music_controller.tscn" id="10_0fj1v"]
+[ext_resource type="PackedScene" uid="uid://dc63jaqp3d1lx" path="res://Scenes/enemy.tscn" id="10_ikia7"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_yp4wr"]
 
@@ -76,3 +78,8 @@ music_controller = NodePath("../MusicController")
 [node name="Player" parent="." node_paths=PackedStringArray("disc") instance=ExtResource("3_5a7ea")]
 position = Vector2(476, 542)
 disc = NodePath("../Disc")
+disc_inner_radius = 160.0
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("9_5v1tr")
+enemy_scene = ExtResource("10_ikia7")
