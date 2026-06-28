@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4e3fu7loph8m"]
 
 [ext_resource type="Script" uid="uid://ddlv0a785t4kv" path="res://Scripts/player.gd" id="1_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://cmlodrqpkoswn" path="res://Assets/topdown_textures/topdown_character.png" id="2_vgqql"]
-[ext_resource type="Texture2D" uid="uid://b1s6xdlupsnue" path="res://Assets/topdown_textures/gun.png" id="3_fkybt"]
-[ext_resource type="Script" uid="uid://4dgdbce6kr4k" path="res://Scripts/gunPivot.gd" id="3_x3wgy"]
-[ext_resource type="Script" uid="uid://b33e83ksc5f1k" path="res://Scripts/gun.gd" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://bu3rj83lj5q5j" path="res://Assets/characters/fixed_player.png" id="2_fkybt"]
+[ext_resource type="Script" path="res://Scripts/gunPivot.gd" id="3_x3wgy"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://dberkbseu7838" path="res://Assets/characters/weapons.png" id="4_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3wgy"]
 radius = 17.0
-height = 42.0
+height = 100.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -17,14 +17,21 @@ disc_radius = 400.0
 
 [node name="Body" type="Sprite2D" parent="."]
 scale = Vector2(1.6875, 1.6875)
-texture = ExtResource("2_vgqql")
+texture = ExtResource("2_fkybt")
+region_enabled = true
+region_rect = Rect2(21.7188, 10.7043, 20.2812, 52.4486)
 
 [node name="GunPivot" type="Node2D" parent="Body"]
+position = Vector2(13.037, 0)
 script = ExtResource("3_x3wgy")
 
 [node name="Gun" type="Sprite2D" parent="Body/GunPivot"]
-position = Vector2(16, 0)
-texture = ExtResource("3_fkybt")
+rotation = -6.28319
+scale = Vector2(0.568937, 0.568937)
+texture = ExtResource("4_x3wgy")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(44.3106, 5.20722, 31.6894, 19.3972)
 script = ExtResource("4_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
