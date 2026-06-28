@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcswcd2mg7qtf"]
+[gd_scene load_steps=7 format=3 uid="uid://dcswcd2mg7qtf"]
 
 [ext_resource type="Shader" uid="uid://ddmrdd5k3eepp" path="res://Scenes/Icon/pixelate.gdshader" id="1_14k46"]
+[ext_resource type="Script" uid="uid://cnxqtk41fqj6u" path="res://Scripts/bullet.gd" id="1_qvus8"]
 [ext_resource type="Texture2D" uid="uid://ca7bk67gg0axp" path="res://Assets/topdown_textures/Orb.webp" id="1_vlxeq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14k46"]
@@ -9,10 +10,14 @@
 shader = ExtResource("1_14k46")
 shader_parameter/amount = 16
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvus8"]
+radius = 29.8329
+
 [node name="Bullet" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 4
 gravity_scale = 0.0
+script = ExtResource("1_qvus8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.03405, 3.07975)
@@ -23,3 +28,12 @@ material = SubResource("ShaderMaterial_qvus8")
 position = Vector2(-1, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_vlxeq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qvus8")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

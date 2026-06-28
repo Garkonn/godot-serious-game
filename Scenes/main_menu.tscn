@@ -136,7 +136,7 @@ offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 70
-text = "Game Name"
+text = "On the Record"
 horizontal_alignment = 1
 vertical_alignment = 1
 

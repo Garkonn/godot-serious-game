@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var death_screen = preload("res://Scenes/DeathScreen.tscn")
 var speed = 420.0
 var bullet_speed = 2000
 var bullet = preload("res://Scenes/Bullet.tscn")
@@ -60,3 +61,11 @@ func fire() -> void:
 	bullet_instance.rotation_degrees = gun.rotation_degrees
 	bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated(gun.rotation))
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
+	
+# DIE
+
+
+func die() -> void:
+	var screen = death_screen.instantiate()
+	get_tree().get_root().add_child(screen)
+	queue_free()
