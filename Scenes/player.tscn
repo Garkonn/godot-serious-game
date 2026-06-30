@@ -12,11 +12,12 @@ height = 100.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 21
+collision_mask = 5
 script = ExtResource("1_6t5aa")
 disc_radius = 400.0
 
 [node name="Body" type="Sprite2D" parent="."]
+position = Vector2(0, -37.5)
 scale = Vector2(1.6875, 1.6875)
 texture = ExtResource("2_fkybt")
 region_enabled = true
@@ -34,6 +35,7 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2(44.3106, 5.20722, 31.6894, 19.3972)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.779999, 0.76)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(-0.5, -35)
+scale = Vector2(0.682555, 0.665055)
 shape = SubResource("CapsuleShape2D_x3wgy")

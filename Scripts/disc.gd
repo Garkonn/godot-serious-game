@@ -1,5 +1,7 @@
 extends Node2D
 
+signal stage_reached(stage_number: int)
+
 @export var rotation_speed: float = 0.8
 @export var music_controller: Node2D
 var current_speed: float = 0.0
@@ -30,7 +32,8 @@ func _ready() -> void:
 				elapsed += 5.0
 			
 		stage_number += 1
-		print(" Stage ", stage_number, " reached! Ramping to speed: ", target)
+		print("--- Stage ", stage_number, " reached! Ramping to speed: ", target, " ---")
+		emit_signal("stage_reached", stage_number)
 		music_controller.play_stage_music(music_controller.starting_track + stage_number)
 			
 		var tween = create_tween()

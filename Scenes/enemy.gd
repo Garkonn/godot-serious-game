@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed: float = 200.0
+var speed: float = 1000.0
 var player: Node2D = null
 
 func _ready() -> void:
@@ -13,12 +13,10 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func die() -> void:
+	ScoreManager.add_score(1)
 	queue_free()
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("Enemy area hit by: ", area.get_parent().name)
-	if area.get_parent().is_in_group("bullet"):
-		area.get_parent().queue_free()
-		die()
-	elif area.get_parent().is_in_group("player"):
-		area.get_parent().die()
+func _on_area_2d_body_entered(body: Node) -> void:
+	print("Enemy touched: ", body.name, " | groups: ", body.get_groups())
+	if body.is_in_group("player"):
+		body.die()

@@ -10,10 +10,12 @@ scale = Vector2(7.79202, 7.79202)
 script = ExtResource("1_2tqy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.860255, 1.06479)
 scale = Vector2(0.132607, 0.132607)
 texture = ExtResource("2_2tqy2")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.860255, 1.06479)
 collision_layer = 16
 collision_mask = 2
 

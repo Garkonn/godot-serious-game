@@ -7,7 +7,9 @@ var bullet = preload("res://Scenes/Bullet.tscn")
 @export var disc: Node2D
 @export var disc_radius: float = 570.0  # MUST BE FIXED IF DISC SIZE IS CHANGED
 @export var disc_inner_radius: float = 70.0 # ^^^
+@export var fire_cooldown: float = 0.3  # < SECONDS BETWEEN SHOTS
 
+var cooldown_timer: float = 0.0
 var last_disc_rotation: float = 0.0
 
 # NOT USING THIS PROCESS, CAN DELETE
@@ -15,17 +17,25 @@ func _process(_delta: float) -> void:
 	pass
 
 # SIMPLE MOVE SYSTEM
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var move_dir = Vector2(Input.get_axis("move_left", "move_right"),
 	Input.get_axis("move_up", "move_down"))
 
+# MEASURE COOLDOWN TIMER
+	if cooldown_timer > 0.0:
+		cooldown_timer -= delta
+	
 	if move_dir != Vector2.ZERO:
 		velocity = speed * move_dir.normalized()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
-
 	move_and_slide()
+	
+	if Input.is_action_pressed("shoot") and cooldown_timer <= 0.0:
+		fire()
+		cooldown_timer = fire_cooldown
+
 
 
 # ROTATE DISC AS WELL AS PLAYER EACH FRAME
@@ -50,8 +60,6 @@ func _physics_process(_delta: float) -> void:
 
 
 # SHOOT
-	if Input.is_action_just_pressed("shoot"):
-		fire()
 
 func fire() -> void:
 	var gun = $Body/GunPivot
